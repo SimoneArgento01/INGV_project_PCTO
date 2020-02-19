@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html lang="it" dir="ltr">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Iscrizione ai viaggi</title>
+
+	<!-- Lo script poteva essere incluso con un file esterno attraverso il tag: script type="application/javascript" src=file.js -->
+
+	<script>
+
+		function calcolo(){
+			const costo1 = 48;
+			const costo2 = 36;
+
+			var importo = 0;
+
+			var n_viaggi = document.getElementById('quantity').value;
+
+			n_viaggi = parseInt(n_viaggi);
+
+			if(n_viaggi > 2){
+				importo = n_viaggi*costo1;
+			}
+
+			else{
+				importo = n_viaggi*costo2;
+			}
+
+
+			document.getElementById('import').value = importo;
+		}
+
+	</script>
+</head>
+
+<body style="background-color:#00acff">
+
+	<center><h1><i>Scheda per l'iscrizione</i></h1></center>
+
+	<form name="registrazione">
+		<label for="nome" style="margin-right: 4em;">Nome:	</label>
+		<input type="text" name="nome" size="50" maxlenght="25" /><br><br>
+		<label for="cognome" style="margin-right: 2.6em;">Cognome:	</label>
+		<input type="text" name="cognome" size="50" maxlenght="25" /><br><br>
+		<label for="mail" style="margin-right: 0.4em;">Indirizzo email:	</label>
+		<input type="email" name="mail" size="50" maxlenght="25" /><br>
+
+		<br>
+
+		<label for="sesso">Sesso:</label><br>
+		<input type="radio" name="sesso" value="F" checked />FEMMINA
+		<input type="radio" name="sesso" value="F" />MASCHIO
+
+		<br><br>
+
+
+		<label for="luoghi">Luoghi preferiti:</label><br>
+		<input type="checkbox" name="luoghi" value="mare" checked />Mare<br>
+		<input type="checkbox" name="luoghi" value="montagna" />Montagna<br>
+		<input type="checkbox" name="luoghi" value="citta" />Città<br>
+		<input type="checkbox" name="luoghi" value="centri_termali" />Centri termali<br>
+
+		<br>
+
+		<label for="professione">La tua professione:</label><br>
+		<select name="professione">
+			<option>Impiegato</option>
+			<option>Amministratore</option>
+		</select>
+
+		<br><br>
+
+		<label for="quantita">Quanti viaggi vuoi acquistare?</label>
+		<input type="number" id="quantity" name="quantita" min="1" step="1">
+		<input type="button" name="calcola" value="Calcola" onclick="calcolo()">
+		<input type="reset" name="annulla" value="Annulla">
+
+		<br><br>
+
+		<label for="importo">L'importo che dovrai versare è di: </label>
+		<input type="text" name="importo" id="import">
+
+		<br><br>
+		<input type="Submit" name="invio" value="Invia">
+
+</body>
+
+</html>
